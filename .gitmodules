@@ -1,0 +1,6 @@
+[submodule "back"]
+	path = back
+	url = https://github.com/GilbertoLQ/backendnode.git
+[submodule "front"]
+	path = front
+	url = https://github.com/GilbertoLQ/proyectoBootcamp.git
