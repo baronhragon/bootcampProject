@@ -1,0 +1,41 @@
+firebase-- push notifications
+
+consulta de base de datos SQL 
+
+-- =============================================
+-- Author:			Roberto Aguirre
+-- Create date:		2017 06 22
+-- Description:		Trae la última ubicación de cada recurso
+-- =============================================
+CREATE PROCEDURE TraeUbicaciones
+AS
+BEGIN
+	SET NOCOUNT ON;
+		SELECT 
+	   		*
+	FROM   ubicaciones u
+	INNER JOIN(
+		SELECT idrecurso, 
+			   max (fecha) AS maxdate
+		FROM ubicaciones
+		GROUP BY idrecurso
+	)um on u.idrecurso = um.idrecurso AND u.fecha = um.maxdate
+END
+
+
+++++++++++++++++++++++++++++ My QUERY +++++++++++++++++++
+
+select top 1 * from location order by locationTime desc;
+
+LATEST vvvvv
+
+select * from location l inner join(select idUser, max(locationTime)
+ as maxdate from location group by idLocation)
+q on l.idUser=q.idUser and l.locationTime=q.maxdate
+
+idUser	maxdate
+------	-----------------------
+44	2022-07-06 17:52:58.287
+30	2022-07-05 20:05:40.310
+2	2022-07-06 16:38:36.133
+1	2022-07-05 16:24:43.157
