@@ -1,0 +1,69 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Header</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  [formGroup]="registerRestaurantForm" (ngSubmit)="guardar()">
+    
+  <ion-item>
+    <ion-label> Full name </ion-label>
+    <ion-input  formControlName="nameRestaurant"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Address </ion-label>
+    <ion-input formControlName="address"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Phone </ion-label>
+    <ion-input formControlName="phone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> rType </ion-label>
+    <ion-input formControlName="rType"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> openLocal </ion-label>
+    <ion-input formControlName="openLocal"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> closeLocal </ion-label>
+    <ion-input formControlName="closeLocal"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> latitude </ion-label>
+    <ion-input formControlName="lat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> longitud </ion-label>
+    <ion-input formControlName="lng"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> short Description </ion-label>
+    <ion-input formControlName="shortDescription"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Long Description </ion-label>
+    <ion-input formControlName="longDescription"></ion-input>
+  </ion-item>
+</form>
+
+  <ion-item>
+    <ion-label> Image </ion-label>
+    <ion-input type="file" (change)="onFile($event)" ></ion-input>
+  </ion-item>
+
+<ion-button id="buttom" (click)="guardar()"  expand="block" shape="round">Create</ion-button>
+  
+</ion-content>

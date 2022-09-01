@@ -1,0 +1,132 @@
+//restaurantes
+.title {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 0.4em;
+}
+ion-progress-bar {
+    width: 85%;
+    margin: 0 auto;
+}
+.restaurantes {
+    padding-top: 3em;
+    width: 90%;
+    margin: 0 auto;
+    h1 {
+        text-align: left;
+        color: var(--ion-color-dark);
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+    h4 {
+        color: var(--ion-color-dark);
+        margin: 0;
+    }
+
+    .restaurante {
+        .restaurante-info {
+            padding: 1em 2em 1em 2em;
+        }
+        .restaurante-mas-info {
+            ion-card-subtitle {
+                color: var(--ion-color-dark);
+                display: flex;
+                gap: 1em;
+            }
+        }
+        .restaurante-nombre {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ion-card-title {
+                h3 {
+                color: var(--ion-color-dark);
+                font-weight: bold;
+                text-transform: capitalize;
+                }
+            }
+            .restaurante-calificacion {
+                background-color: var(--ion-color-tertiary);
+                color: var(--ion-color-light);
+                font-weight: bold;
+                padding: 0.5em 1em;
+                border-radius: 1em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h3 {
+                    color: var(--ion-color-light);
+                    margin: 0;
+                }
+                ion-icon {
+                    margin-left: 0.5em;
+                }
+            }
+        }
+        ion-card.normal {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background-color: var(--ion-color-light);
+            margin-bottom: 4em;
+            cursor: pointer;
+            box-shadow: 0 0 1em var(--ion-color-light);
+
+            .restaurante-imagen {
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            ion-card-title {
+                h3 {
+                    margin: 0;
+                }
+                font-weight: bold;
+                color: var(--ion-color-dark);
+                max-width: 20em;
+            }
+            ion-card-content {
+                color: #07070c;
+            }
+        }
+        ion-card.activated {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background-color: var(--ion-color-primary);
+            margin-bottom: 4em;
+            cursor: pointer;
+            box-shadow: 0 0 1em var(--ion-color-primary);
+
+            .restaurante-imagen {
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            ion-card-title {
+                h3 {
+                    margin: 0;
+                }
+                font-weight: bold;
+                color: var(--ion-color-dark);
+                max-width: 20em;
+            }
+            ion-card-content {
+                color: var(--ion-color-light);
+            }
+        }
+        .favorito {
+            ion-icon {
+                width: 2em;
+                height: 2em;
+            }
+
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

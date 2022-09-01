@@ -1,0 +1,108 @@
+<ion-content force-overscroll>
+  <div class="contenedor">
+
+  <!-- ubicacion actual -->
+  <div class="header-home">
+    <div class="ubicacion-actual-home">
+      <ion-grid>
+        <ion-row style="justify-content: center; align-items:center;">
+          <ion-col size="auto">
+            <h1 class="ubicacion-actual">Delaware St</h1>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-icon (click)="map()" name="caret-down-outline" class="flecha-ubicacion"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- barra de busqueda -->
+    <ion-searchbar placeholder="What do you want to eat?" color="light" (click)="printCurrentPosition()"></ion-searchbar>
+  </div>
+
+    <!-- filtros de busqueda -->
+    <ion-slides class="filtros-busqueda-home" [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+      <ion-slide class="filtro-busqueda-home">
+        <ion-card (click)="ModalFilter()">
+          <h3><ion-icon name="options-outline"></ion-icon></h3>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="filtro-busqueda-home" (click)="Modal()">
+        <ion-card>
+          <h3>Categories</h3>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="filtro-busqueda-home">
+        <ion-card>
+          <h3>Favorites</h3>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="filtro-busqueda-home">
+        <ion-card>
+          <h3>Top Rated</h3>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+<!-- slides -->
+<div class="slides">
+    <ion-slides [options]="slidesOptions">  
+      <ion-slide style="background-image: url(../../assets/AmericanFood.jpg); background-size:cover; background-repeat: no-repeat; background-position: center; margin: 0 auto;"><h3>Find the best restaurants in your zone</h3></ion-slide>
+      <ion-slide style="background-image: url(../../assets/KoreanFood.jpg); background-size:cover; background-repeat: no-repeat; background-position: center; margin: 0 auto;"><h3>Invite your friends for a meet</h3></ion-slide>
+      <ion-slide style="background-image: url(../../assets/japaneseFOod.jpg); background-size:cover; background-repeat: no-repeat; background-position: center; margin: 0 auto;"><h3>Reserve a place in your favorite restaurant</h3></ion-slide>
+    </ion-slides>
+</div>
+
+  <!-- restaurantes -->
+  <div class="restaurantes">
+  <h1>Restaurants near you</h1>
+
+  <ion-card class="restaurante" *ngFor="let restaurant of results; let i = index" [id]="restaurant['id']" (click)="Carta(i)">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="3" size-md="3" size-sm="" size-xs="5">
+        <div class="restaurante-imagen">
+          <img src="{{imagesUrl}}{{restaurant.img}}">
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="restaurante-info">
+          <div class="restaurante-nombre">
+            <ion-card-title> <h2>{{restaurant.nameRestaurant}}</h2> </ion-card-title>
+          </div>
+          <div class="restaurante-mas-info">
+          <ion-card-subtitle>
+            <h4 class="restaurante-categoria">{{restaurant.rType}}</h4>
+            <h4 class="restaurante-precio">{{restaurant.openLocal}} - {{restaurant.closeLocal}}</h4>
+          </ion-card-subtitle>
+          </div>
+          <!-- <ion-card-subtitle> <h4>{{restaurant.address}}</h4> </ion-card-subtitle> -->
+          <div class="favorito">
+            <ion-icon name="heart-outline"></ion-icon>
+          </div>          
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+  </div>
+  </div>
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="time" (click)="Historial()" routerAnimation="back">
+    <ion-icon name="time"></ion-icon>
+    <h4><ion-label>History</ion-label></h4>
+  </ion-tab-button>
+
+  <ion-tab-button tab="people" (click)="Contactos()">
+    <ion-icon name="people"></ion-icon>
+    <h4><ion-label>Invite</ion-label></h4>
+  </ion-tab-button>
+
+  <ion-tab-button (click)="profile()" tab="Profile">
+    <ion-icon name="person"></ion-icon>
+    <h4><ion-label>Account</ion-label></h4>
+  </ion-tab-button>
+</ion-tab-bar>

@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="arrow-back-outline" id="flechita-atras" (click)="goBack()"></ion-icon>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="hero"></div>
+  
+  <div class="contenedor">
+    <h1 class="title">Welcome back!</h1>
+
+    <form class="formularioLogin" [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
+        
+      <ion-item class="input" lines="none">
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input
+            formControlName="email"
+            name="email"
+            required
+            inputmode="text"
+            type="text">
+          </ion-input>
+        </ion-item>
+
+        <ion-item class="input" lines="none">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            required
+            formControlName="password"
+            name="password"
+            size="password"
+            type="password">
+          </ion-input>
+        </ion-item>
+      </form>
+
+    <div class="opciones-secundarias">
+      <button (click)="forget()"> <h3>Forgot your password?</h3> </button>
+      <button (click)="signUp()"> <h3>Sign up</h3> </button>
+    </div>
+
+    <ion-item class="errormsg" lines="none">
+      <div class="error" 
+      *ngIf="formularioLogin.get('email').hasError('required') || formularioLogin.get('password').hasError('required')">
+      <ion-icon name="warning-outline"></ion-icon>Both fields are required
+      </div>
+    </ion-item>
+
+    <ion-item class="errormsg" lines="none">
+      <div class="error" 
+      *ngIf="formularioLogin.get('email').hasError('email')">
+      <ion-icon name="warning-outline"></ion-icon>Invalid email adress
+      </div>
+    </ion-item>
+
+    <ion-button id="buttom" color="secondary" (click)="ingresar()" type="submit" expand="block" shape="round">Login</ion-button>
+
+  </div>
+

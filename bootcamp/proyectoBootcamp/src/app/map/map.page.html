@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="close" id="flechita-atras" (click)="popPage()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="contenedor-time-map">
+    <p class="time-map">
+      <ion-icon name="time-outline"></ion-icon>
+      {{avgETA}}
+    </p>
+  </ion-card>
+  <div #map class="map"></div>
+
+  <!-- <div id="adress"></div> -->
+
+</ion-content>

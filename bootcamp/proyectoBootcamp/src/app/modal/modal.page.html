@@ -1,0 +1,17 @@
+<body>
+  <ion-header>
+    <ion-toolbar>
+      <div style="display:flex">
+      <ion-title><h3 style="text-align: center; color: var(--ion-color-dark);">Select a category</h3></ion-title>
+      </div>        
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <ion-item *ngFor="let list of users">
+      <ion-label>
+        <ion-button size="block" expand="round" color="light" style="--box-shadow: none !important;">{{list.name}}</ion-button> 
+      </ion-label>
+    </ion-item>
+  </ion-content>
+</body>

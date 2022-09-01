@@ -1,0 +1,94 @@
+<div class="d-flex">
+    <div id="sidebar-container" class="bg-dark">
+        <div class="logo">
+            <h4 class="text-light">RestaurantsApp</h4>
+        </div>
+        <div class="menu">
+            <h4 class="text-light p-2">Orders</h4>
+            <a [routerLink]="['/home']" class="d-flex p-3 text-light active align-items-center"><i class="bi bi-clipboard2-fill"></i>Incoming</a>
+            <a [routerLink]="['/home-preparing']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-fire"></i>Preparing</a>
+            <a [routerLink]="['/home-ready']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-clipboard2-check-fill"></i>Ready</a>
+            <a [routerLink]="['/home-history']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-clock-fill"></i>History</a>
+        </div>
+    </div>
+
+    <div class="w-100">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img class="img-fluid rounded-circle avatar mr-2" src="../assets/profile.jpg" alt="">
+                      John Ham's
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item">Account</a></li>
+                      <li><a class="dropdown-item" [routerLink]="['/menu']">Menu</a></li>
+                      <li><a class="dropdown-item text-danger" [routerLink]="['/first-page']">Log out</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div id="content">
+            <section>
+                <div class="container w-75 pt-5 orden-colapsable">
+
+                    <div class="accordion" id="accordionExample"> 
+
+                        <div class="accordion-item border mb-4">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <div class="row">
+                                <div class="col-6"><strong>Humberto Aragon</strong></div> <!--nombre-->
+                                <div class="col-6">24/07/2022</div> <!--fecha de reservacion-->
+                                <div class="col-8 mt-1"> 89BCDA</div> <!--id de reservacion-->
+                              </div>
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Qty.</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mushroom burger</td>
+                                        <td>$185</td>
+                                    </tr>
+                                    <tr class="total">
+                                        <td></td>
+                                        <td><strong>Total</strong></td>
+                                        <td><strong>$185</strong></td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                                <div class="botones">
+                                    <button type="button" class="btn btn-dark">Cancel</button>
+                                    <button type="button" class="btn btn-dark">Confirm</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+          </div>
+
+    </div>
+
+</div>

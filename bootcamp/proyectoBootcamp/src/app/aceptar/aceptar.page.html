@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="chevron-back-outline" id="flechita-atras"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div id="container">
+    <h2>Espera un momento...</h2>
+    <ion-label *ngFor="let p of persona">{{p}}, </ion-label>
+    <ion-label> está eligiendo 3 restaurantes...</ion-label>
+    <div id="espera">
+      <ion-progress-bar type="indeterminate" color="primary"></ion-progress-bar>
+      <img src="../../assets/espera seleccion.gif" alt="" srcset="">
+      <button></button>
+    </div>
+    <ion-button color="primary" size="large" (click)="continuar()">Continuar</ion-button>
+  </div>
+
+</ion-content>
+

@@ -1,0 +1,96 @@
+.header-restaurante {
+    height: 20em;
+    width: 100% !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 0 0 2em 2em;
+    box-shadow: 0em 0.2em 0.6em var(--ion-color-medium);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .info-restaurante {
+        text-align: center;
+        h1,h2,h3,h4 {
+            color: var(--ion-color-light);
+            margin: 0;
+        }
+        h1 {
+            font-size: 4vh;
+        }
+        .nombre-restaurante {
+            padding-top: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            ion-icon {
+                margin: 0;
+                padding: 0;
+                margin-left: 0.2em;
+            }
+        }
+        .descripcion-restaurante {
+            .flex {
+                display: flex;
+                gap: 1em;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+ion-toolbar.busqueda-carta {
+    padding-top: 1em;
+}
+.carta {
+    ion-card {
+        box-shadow: none !important;
+        ion-card-title {
+            h3 {
+                font-size: 2.6vh;
+            }
+        }
+        ion-card-subtitle {
+            h3 {
+                font-size: 2.2vh;
+            }
+        }
+        p {
+            font-size: 1.8vh;
+        }
+    }
+    h2 {
+        padding: 1em 0 1em 0;
+    }
+    .platillo {
+        padding-bottom: 1em;
+        border-bottom: 1px solid var(--ion-color-light);
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 2em;
+        }
+        h3 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    #add{
+        position: absolute;
+        top: 230px;
+        right: 10px;
+        z-index: 1;
+    }
+    #remove{
+        position: absolute;
+        top: 230px;
+        right: 200px;
+        z-index: 1;
+    }
+}

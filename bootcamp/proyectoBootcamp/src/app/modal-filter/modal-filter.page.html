@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-back-button defaultHref="/">
+        <ion-icon name="close" id="flechita-atras"></ion-icon>
+      </ion-back-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contenedor">
+  <h1 class="title">Filters</h1>
+  <p class="description">Select your restaurant filters</p>
+
+  <ion-list>
+    <ion-radio-group name="sort" value="sort">
+      <ion-list-header>
+        <ion-label><h2>Sort</h2></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label><h3>Best visited</h3></ion-label>
+        <ion-radio value="bestVisited"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label><h3>Most popular</h3></ion-label>
+        <ion-radio value="popular"></ion-radio>
+      </ion-item>
+      <ion-item class="line">
+        <ion-label><h3>Closest</h3></ion-label>
+        <ion-radio value="closest"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-radio-group name="type" value="type">
+      <ion-list-header>
+        <ion-label><h2>Type</h2></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label><h3>Mexican</h3></ion-label>
+        <ion-radio value="Mexican"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label><h3>American</h3></ion-label>
+        <ion-radio value="American"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label><h3>Japanese</h3></ion-label>
+        <ion-radio value="Japanese"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label><h3>Korean</h3></ion-label>
+        <ion-radio value="korean"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label><h3>Italian</h3></ion-label>
+        <ion-radio value="Italian"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label><h3>Arabic</h3></ion-label>
+        <ion-radio value="Arabic"></ion-radio>
+      </ion-item>
+      <ion-item class="line">
+        <ion-label><h3>Brazilian</h3></ion-label>
+        <ion-radio value="Brazilian"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+
+  <ion-item-group name="cost" value="cost">
+    <ion-list-header>
+      <ion-label><h2>Cost</h2></ion-label>
+    </ion-list-header>
+    
+    <ion-item>
+      <ion-range min="-200" max="200" color="secondary">
+        <ion-label slot="start"><h3>200 MXN</h3></ion-label>
+        <ion-label slot="end"><h3>10000 MXN</h3></ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-item-group>
+</div>
+</ion-content>
+
+<ion-footer class="footer">
+    <ion-button shape="round" color="secondary">Search</ion-button>
+</ion-footer>

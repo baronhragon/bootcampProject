@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="arrow-back-outline" id="flechita-atras" (click)="Home()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+<div class="contenedor">
+
+  <h1 class="title">Select your guests</h1>
+  <p class="description">Select the guests for your reservation</p>
+
+  <ion-list>
+    <ion-item *ngFor="let item of results">
+      <ion-avatar *ngIf="item.img"  slot="start">
+        <img src="{{item.img}} || ../../../../assets/default-avatar.png" [hidden]="lastImage === null">
+      </ion-avatar>
+      <ion-text color="dark">
+        <h3>{{item.nombre}}</h3>
+      </ion-text>
+      <!-- <ion-checkbox color="secondary" [(ngModel)]="item.check" checked="false" (click)="saveContacts(item)" slot="end" ></ion-checkbox> -->
+      <ion-checkbox color="secondary" [(ngModel)]="item.check" (click)="saveContacts(item)" slot="end" ></ion-checkbox>
+    </ion-item>
+</ion-list>
+
+<ion-list>
+
+  <ion-item *ngFor="let contact of contacts; let i = index" (click)="sendSms(contact.phone)">
+    <ion-icon *ngIf="!contact.photoThumbnail" color="primary" slot="start" name="person-circle"></ion-icon>
+    <ion-avatar *ngIf="contact.photoThumbnail"  slot="start">
+      <ion-img [src]="contact.photoThumbnail"></ion-img>
+    </ion-avatar>
+    <ion-label class="ion-text-wrap">
+      <ion-text color="dark">
+        <h3>{{contact.user}}</h3>
+      </ion-text>
+      <ion-text color="medium">
+        <p>{{contact.phone}}</p>
+      </ion-text>
+    </ion-label>
+    <ion-button (click)="sendSms(contact.phone)" expand="block" fill="clear" shape="round" color="primary">
+      Invite
+    </ion-button>
+  </ion-item>
+
+</ion-list>
+
+</div>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-button shape="round" color="secondary" (click)="notificacionBD()" >Accept</ion-button>
+</ion-footer>

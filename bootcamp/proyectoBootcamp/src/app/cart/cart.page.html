@@ -1,0 +1,67 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of order">
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>{{item.nameProduct}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content> -->
+
+<!-- ============================================ -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="close" id="flechita-atras" (click)="Home()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="contenedor">
+
+  <h1 class="title">Order</h1>
+
+  <div class="carta" *ngFor="let item of order">
+    <ion-card class="platillo">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="platillo-info">
+              <ion-card-title> <h3>{{item.nameProduct}} {{item.quantity}}</h3> </ion-card-title>
+              <ion-card-subtitle> <h3>{{item.price*item.quantity}} MXN</h3> </ion-card-subtitle>
+            </div>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    </ion-card>
+  </div>
+</div>
+
+<ion-item-divider>
+  <ion-label>
+    <h2>Total</h2>
+  </ion-label>
+</ion-item-divider>
+
+<h2>  ${{totalAmount()}} MXN</h2>
+
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-button expand="round" color="secondary" (click)="sendOrderToRestaurant()">Confirm Order</ion-button>
+</ion-footer>
+

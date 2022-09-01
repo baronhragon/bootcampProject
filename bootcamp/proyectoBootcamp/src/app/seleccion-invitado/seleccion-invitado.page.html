@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="close" id="flechita-atras" (click)="Home()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1 class="title">Vote for a restaurant</h1>
+  <ion-progress-bar type="indeterminate" color="secondary"></ion-progress-bar>
+
+  <!-- restaurantes -->
+  <div class="restaurantes">
+  
+      <div class="restaurante">
+        <ion-card *ngFor="let restaurant of results" class="normal"> 
+  
+        <div class="restaurante-imagen">
+          <img src="{{imagesUrl}}{{restaurant.img}}"/>
+        </div>
+  
+        <div class="restaurante-info">
+          <div class="restaurante-nombre">
+            <ion-card-title> <h3>{{restaurant.nameRestaurant}}</h3> </ion-card-title>
+            <div class="restaurante-calificacion">
+              <h3>4.2<ion-icon name="star"></ion-icon></h3>
+            </div>
+          </div>
+  
+          <div class="restaurante-mas-info">
+            <ion-card-subtitle>
+              <h3 class="restaurante-categoria">{{restaurant.rType}}</h3>
+              <h3>|</h3>
+              <h3 class="restaurante-precio">$$</h3>
+            </ion-card-subtitle>
+          </div>
+  
+          <ion-card-subtitle> <h4>{{restaurant.address}}</h4> </ion-card-subtitle>
+          <div class="favorito">
+          </div>
+        </div>
+  
+        </ion-card>
+      </div>
+  
+    </div>
+
+</ion-content>
+
+<ion-footer class="footer">
+
+  <ion-button expand="round" color="secondary" (click)="AbreGanador()">Vote</ion-button>
+
+</ion-footer>

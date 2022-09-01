@@ -1,0 +1,21 @@
+h3, .botones {
+  width: 100%;
+  margin: 0 auto;
+}
+.title {
+  padding-top: 0;
+}
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2em;
+  padding-top: 50%;
+}
+.botones {
+  ion-button {
+    margin-right: 1.4em;
+  }
+}

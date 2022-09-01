@@ -1,0 +1,99 @@
+<div class="d-flex">
+  
+    <div id="sidebar-container" class="bg-dark">
+        <div class="logo">
+            <h4 class="text-light">RestaurantsApp</h4>
+        </div>
+        <div class="menu">
+            <h4 class="text-light p-2">Orders</h4>
+            <a [routerLink]="['/home']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-clipboard2-fill"></i>Incoming</a>
+            <a [routerLink]="['/home-preparing']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-fire"></i>Preparing</a>
+            <a [routerLink]="['/home-ready']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-clipboard2-check-fill"></i>Ready</a>
+            <a [routerLink]="['/home-history']" class="d-flex p-3 text-light align-items-center"><i class="bi bi-clock-fill"></i>History</a>
+        </div>
+    </div>
+
+    <div class="w-100">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img class="img-fluid rounded-circle avatar mr-2" src="../assets/profile.jpg" alt="">
+                      John Ham's
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="#">Menu</a></li>
+                      <li><a class="dropdown-item text-danger" [routerLink]="['/first-page']">Log out</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div id="content">
+            <section class="mt-3">
+      
+              <h3 class="d-flex justify-content-center w-75 mx-auto mt-5">New dish</h3>
+              <button type="button" class="btn d-flex justify-content-center w-75 mx-auto" data-bs-toggle="modal" data-bs-target="#add-section-modal" data-whatever="@mdo">
+                <i class="bi bi-plus-circle-fill m-0"></i>
+              </button>
+
+              <div id="sections-container"></div>
+
+              <div class="modal" id="add-section-modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">New dish</h4>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <form [formGroup]="formularioMenuSection">
+
+                        <div class="form-group mb-3">
+                          <label for="inputName" class="mb-1">Name</label>
+                          <input formControlName="sectionName" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter dish name">
+                        </div>
+
+                        <label for="formCategorySelect" class="mb-1">Dish section</label>
+                        <select class="form-control mb-3" id="formCategorySelect">
+                          <option selected="selected" disabled>--Select a section</option>
+                          <option>Add section</option>
+                        </select>
+
+                        <div class="form-group mb-3">
+                          <label for="inputName" class="mb-1">Price</label>
+                          <input formControlName="sectionName" type="number" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter dish price">
+                        </div>
+
+                        <div class="form-group mb-3">
+                          <label for="inputName" class="mb-1">Enter a dish image</label>
+                          <input type="file" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="form-group mb-5">
+                          <label for="inputName" class="mb-1">Description:</label>
+                          <textarea class="form-control" rows="5" id="comentarios" name="comentarios"></textarea>                        </div>
+
+                        <button type="submit" class="w-100 btn btn-dark btn-block" (click)="guardar()">Accept</button>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               
+            </section>
+          </div>
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+}
+.active {
+    background-color: white;
+    color: black !important;
+}
+#sidebar-container {
+    min-height: 100vh;
+}
+#sidebar-container .logo {
+    padding: 1em 2em;
+}
+#sidebar-container .menu {
+    width: 15em;
+}
+.avatar {
+    max-width: 35px;
+    margin-right: 1em;
+}
+#content {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 3em;
+}
+i {
+    font-size: 2em;
+}

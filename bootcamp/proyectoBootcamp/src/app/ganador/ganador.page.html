@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="close" id="flechita-atras" (click)="Home()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenedor">
+ 
+  <div class="contenedor" *ngFor="let restaurant of results">
+    <h3>The restaurant is:</h3>
+    <h1 class="title">{{restaurant.nameRestaurant}}</h1>
+  
+    <div class="botones">
+      <ion-button color="danger" (click)="Rechazar()" expand="round">Cancel invitation</ion-button>
+      <ion-button color="secondary" expand="round" (click)="Carta()">Sent invitation</ion-button>
+    </div>
+  </div>
+
+</ion-content>

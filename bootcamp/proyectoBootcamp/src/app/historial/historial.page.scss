@@ -1,0 +1,29 @@
+.pedido {
+    gap: 1.5em;
+    margin-bottom: 2em;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--ion-color-light);
+
+.imagen-historial {
+    margin-right: 1em;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 2em;
+        box-shadow: 0 0.5em 1em var(--ion-color-medium);
+    }
+}
+    .pedido-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+       margin: 0;
+    }
+    h3,h4 {
+        text-align: left;
+        margin: 0;
+    }
+}

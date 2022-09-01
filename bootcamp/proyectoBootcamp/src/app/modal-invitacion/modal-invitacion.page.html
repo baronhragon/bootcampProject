@@ -1,0 +1,27 @@
+<body>
+  <ion-header>
+    <ion-toolbar>
+      <div style="display: flex">
+        <ion-title>Restaurantes seleccionados</ion-title>
+        <ion-fab horizontal="end" vertical="center" slot="fixed">
+          <ion-fab-button (click)="openModa()" color="secondary" size="small">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="./avatar-finn.png" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{restaurant.name}}</h2>
+          <h3>I'm a big deal</h3>
+          <p>Listen, I've had a pretty messed up day...</p>
+        </ion-label>
+      </ion-item>
+  </ion-content>
+</body>

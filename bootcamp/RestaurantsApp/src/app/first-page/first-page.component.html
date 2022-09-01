@@ -1,0 +1,24 @@
+<div class="m-0 vh-100 row justify-content-center align-items-center">
+    <div class="card w-50 pt-4 pb-4">
+        <div class="card-body">
+            <h1 class="mb-3">Welcome!</h1>
+            <form>
+                <div class="form-group mb-3">
+                  <label for="inputEmail" class="mb-1">Email address</label>
+                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label for="inputPassword" class="mb-1">Password</label>
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                
+                <div class="row w-100 justify-content-center mb-3">
+                    <div class="col-auto">You don't have an account?</div>
+                    <div class="col-auto"><a [routerLink]="['/register']">Register now</a></div>
+                </div>                
+                <button type="submit" class="w-100 btn btn-dark btn-block" [routerLink]="['/home']">Log In</button>
+              </form>
+        </div>
+    </div>
+</div>

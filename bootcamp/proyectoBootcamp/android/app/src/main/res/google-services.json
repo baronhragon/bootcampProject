@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168584681551",
+    "project_id": "bootcamp-ccde5",
+    "storage_bucket": "bootcamp-ccde5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168584681551:android:e6be741f4b8475a27f723a",
+        "android_client_info": {
+          "package_name": "com.bootcamp2022.foodTeams"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168584681551-di8mdg421sa0h8kk94lkag6hnpp3v2b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmB-O_HwMojVMErJHKyiZ8u5p-VtK3ciw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168584681551-di8mdg421sa0h8kk94lkag6hnpp3v2b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

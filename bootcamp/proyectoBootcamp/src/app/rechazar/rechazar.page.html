@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="close" id="flechita-atras" (click)="Inicio()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="contenedor-tachita">
+    <ion-icon name="close-outline" color="danger" id="tachita"></ion-icon>
+  </div>
+
+  <div id="container">
+    <h2>Haz rechazado la invitación de Melany Jiménez</h2>
+    <h4>Avisa a tu amigo porqué no podrás asistir</h4>
+    <br>
+    <br>
+    <div id="mensajes-rechazo">
+      <ion-button color="primary" expand="round">Sorry, i'm short of money</ion-button>
+      <ion-button color="primary" expand="round">Im bussy right now</ion-button>
+      <ion-button color="primary" expand="round">I'm not really hungry</ion-button>
+      <ion-button color="primary" expand="round">I can't go at that hour</ion-button>
+      <ion-button color="primary" expand="round">I don't like that restaurant</ion-button>
+    </div>
+
+    <ion-button class="enviar" color="secondary"size="round" (click)="Inicio(inicio)">Enviar</ion-button>
+  </div>
+</ion-content>
+

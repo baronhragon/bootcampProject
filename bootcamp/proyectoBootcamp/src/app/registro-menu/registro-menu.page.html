@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-select
+        placeholder="Select Restaurant"
+        (ionChange)="handleChange($event)"
+      >
+        <ion-select-option *ngFor="let food of results" [value]="food"
+          >{{ food.nameRestaurant }}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Current value: {{ currentFood }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <form [formGroup]="registerMenuForm" (ngSubmit)="guardar()">
+    <ion-item>
+      <ion-label> Name Product </ion-label>
+      <ion-input formControlName="nameProduct"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Description </ion-label>
+      <ion-input formControlName="descriptionProduct"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Price</ion-label>
+      <ion-input formControlName="price"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Product Type </ion-label>
+      <ion-input formControlName="productType"></ion-input>
+    </ion-item>
+  </form>
+  
+    <ion-item>
+      <ion-label> Image </ion-label>
+      <ion-input type="file" (change)="onFile($event)"></ion-input>
+    </ion-item>
+
+
+  <ion-button id="buttom" (click)="guardar()" expand="block" shape="round"
+    >Create</ion-button
+  >
+</ion-content>

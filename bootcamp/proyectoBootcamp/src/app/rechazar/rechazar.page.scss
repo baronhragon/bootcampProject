@@ -1,0 +1,33 @@
+#mensajes-rechazo {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    ion-button {
+        margin: 0.4em;
+    }
+}
+#contenedor-tachita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 608px;
+}
+#tachita {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 4em;
+}
+h2{
+    margin-top: 2em;
+}
+h4 {
+    margin:0;
+}
+.enviar {
+    font-size: 1.2em;
+    height: 4em;
+    width: 90%;
+    margin: 0 auto;
+}

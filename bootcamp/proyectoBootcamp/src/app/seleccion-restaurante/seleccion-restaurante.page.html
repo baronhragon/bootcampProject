@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon
+        name="arrow-back-outline"
+        id="flechita-atras"
+        (click)="Contactos()"
+      ></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content force-overscroll id="body">
+  <div class="contenedor">
+    <h1 class="title">Select One restaurant</h1>
+    <!-- barra de busqueda -->
+    <ion-searchbar
+      placeholder="What do you want to eat?"
+      color="light"
+    ></ion-searchbar>
+    <div class="restaurantes">
+      <ion-card  *ngFor="let restaurant of results" >
+        <label class="option_item">
+          <input type='checkbox' class="checkbox" [(ngModel)]="restaurant.check" (click)="saveContacts(restaurant)">
+          <ion-grid class="option_inner">
+              <img src="{{imagesUrl}}{{restaurant.img}}" alt="asset" />
+              <div class="restaurante-calificacion">
+                <ion-card-title
+                  ><h3>{{restaurant.nameRestaurant}}</h3></ion-card-title
+                >
+              </div>
+              <ion-card-subtitle>
+                <h4 class="restaurante-categoria">{{restaurant.rType}}</h4>
+              </ion-card-subtitle>
+          </ion-grid>
+        </label>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-button expand="round" color="secondary" (click)="accept(restaurant)"
+    >Accept</ion-button
+  >
+</ion-footer>
+
+<!-- <ion-fab horizontal="end" vertical="center" slot="fixed">
+  <ion-fab-button (click)="openModalInv()" color="secondary">
+    <ion-icon name="eye"></ion-icon>
+  </ion-fab-button>
+</ion-fab> -->

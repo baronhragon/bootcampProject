@@ -1,0 +1,26 @@
+.menu {
+    a:hover {
+        background-color: orangered;
+    }
+}
+.botones {
+    display: flex;
+   justify-content: space-between;
+   gap: 2em;
+   .btn{
+    width: 50%;
+   }
+}
+.total {
+    border: 1px solid white;
+}
+i {
+    margin-right: 1em;
+    font-size: 1.6em;
+}
+#sections-container {
+    display: flex;
+    color: black;
+    height: 50vh;
+    justify-content: center;
+}

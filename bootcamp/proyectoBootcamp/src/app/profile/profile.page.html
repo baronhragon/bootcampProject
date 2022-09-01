@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<div *ngFor="let item of user">
+  <div id="img">
+    <img src="{{user.img}} || ../../../../assets/default-avatar.png" [hidden]="lastImage === null" class="imgcircle">
+  </div>
+  <ion-title>{{item.nombre}}</ion-title>
+  <h3>{{item.phone}}</h3>
+
+</div>
+
+
+<ion-button (click)="signOut()" expand="block" shape="round">
+  sign out
+</ion-button>
+
+</ion-content>

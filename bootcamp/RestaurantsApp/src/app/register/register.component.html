@@ -1,0 +1,98 @@
+<body>
+
+<div class="m-0 vh-100 row justify-content-center align-items-center">
+    <div class="card w-50 pt-4 pb-4">
+        <div class="card-body">
+            <h1 class="mb-5"><i class="bi bi-arrow-left" style="cursor: pointer;" [routerLink]="['/first-page']"></i> Register</h1>
+            <form [formGroup]="registerRestaurantForm">
+              <div class="form-group mb-3">
+                <label for="inputName" class="mb-1">Restaurant name</label>
+                <input type="text" class="form-control" formControlName="nameRestaurant" aria-describedby="nameHelp" placeholder="Enter restaurant name">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="inputAdress" class="mb-1">Adress</label>
+                <input type="text" class="form-control" formControlName="address" ngx-google-places-autocomplete  #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+                <!-- <p>{{formattedAddress}}</p> -->
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label for="selectCategory" class="mb-1">Restaurant category</label>
+                  <select class="form-control mb-3" formControlName="rType">
+                    <option selected="selected" disabled>--Select a category</option>
+                    <option>American</option>
+                    <option>Breakfast and brunch</option>
+                    <option>Chinese</option>
+                    <option>Coffe</option>
+                    <option>Desserts</option>
+                    <option>European</option>
+                    <option>Healthy</option>
+                    <option>Italian</option>
+                    <option>Japanese</option>
+                    <option>Korean</option>
+                    <option>Latin american</option>
+                    <option>Mexican</option>
+                    <option>Oriental</option>
+                    <option>Seafood</option>
+                    <option>Vegan</option>
+                    <option>Others</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <div class="form-group mb-3">
+                    <label for="inputPhone" class="mb-1">Phone</label>
+                    <input type="tel" class="form-control" formControlName="phone" aria-describedby="phoneHelp" placeholder="Enter phone contact">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="form-group mb-3">
+                    <label for="inputOpeningHour" class="mb-1">Opening hour</label>
+                    <input type="time" class="form-control" formControlName="openLocal" aria-describedby="openingHourHelp" placeholder="Enter opening hour">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mb-3">
+                    <label for="inputClosingTime" class="mb-1">Closing hour</label>
+                    <input type="time" class="form-control" formControlName="closeLocal" aria-describedby="colsingTimeHelp" placeholder="Enter closing hour">
+                  </div>
+                </div>
+              </div>
+
+                <div class="form-group mb-3">
+                  <label for="inputEmail" class="mb-1">Email address</label>
+                  <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group mb-3">
+                        <label for="inputPassword" class="mb-1">Password</label>
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                      </div>               
+                    </div>
+                    <div class="col">
+                      <div class="form-group mb-3">
+                        <label for="inputConfirmPassword" class="mb-1">Confirm password</label>
+                        <input type="password" class="form-control" formControlName="confirmacionPassword" placeholder="Confirm password">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="inputName" class="mb-1">Restaurant logo</label>
+                    <input type="file" class="form-control" (change)="onFile($event)" aria-describedby="emailHelp">
+                  </div>
+    
+                  <div class="form-group mb-5">
+                    <label for="inputName" class="mb-1">Restaurant cover</label>
+                    <input type="file" class="form-control" (change)="onFile2($event)" aria-describedby="emailHelp">
+                  </div>
+                  <button type="submit" class="w-100 btn btn-dark btn-block" [routerLink]="['/home']" (click)="guardar()">Next</button>
+                </form>
+          </div>
+      </div>
+  </div>
+  </body>

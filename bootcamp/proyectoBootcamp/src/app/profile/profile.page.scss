@@ -1,0 +1,19 @@
+
+.imgcircle{
+    border-radius:50%;
+    width:200px;
+    height:200px;
+    margin:0px auto 40px;
+    overflow:hidden;
+    display: block;
+}
+
+#img{
+    background:#fafafa;
+    border-bottom: 1px;
+    border-width: 2px;
+    border-color:rgba(43, 42, 42, 0.486);
+    height:300px;
+    width:auto;
+    padding-top: 30px;
+}

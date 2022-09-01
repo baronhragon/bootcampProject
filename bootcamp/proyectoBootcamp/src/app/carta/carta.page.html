@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="close" id="flechita-atras" (click)="Home()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="contenedor">
+
+  <div class="header-restaurante" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{{imagesUrl}}{{key}}{{products.img}}');">
+
+    <div class="info-restaurante">
+
+      <div class="nombre-restaurante"> 
+        <h1>{{products.nameRestaurant}}</h1>
+      </div>
+
+      <div class="descripcion-restaurante">
+        <div class="flex">
+          <h3>{{products.rType}}</h3>
+        </div>  
+        <h3 style="cursor:pointer; width:80%; margin: 0 auto;" (click)="map()"> {{products.address}}</h3>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <h1 class="title">Menu</h1>
+  <ion-searchbar placeholder="What do you want to eat?" color="light"></ion-searchbar>
+
+  <div class="carta" *ngFor="let item of results">
+
+    <h2>{{item.productType}}</h2>
+
+    <ion-card class="platillo">
+      <ion-grid>
+        <ion-row>
+          <ion-col size-lg="10" size-md="8" size-xs="7">
+            <div class="platillo-info">
+              <ion-card-title> <h3>{{item.nameProduct}} </h3> </ion-card-title>
+              <ion-card-subtitle> <h3>{{item.price}} MXN</h3> </ion-card-subtitle>
+              <p class="description">{{item.descriptionProduct}}</p>
+                <h3 class="add-product">
+                  <ion-icon name="remove-circle-outline" size="large" id="remove" (click)="removeProduct(item)"></ion-icon>
+                  <p class="quantity">{{item.quantity}}</p>
+                  <ion-icon name="add-circle-outline" size="large" id="add" (click)="addProduct(item)"></ion-icon>
+                </h3>
+            </div>
+          </ion-col>
+          <ion-col size-lg="2" size-md="4" size-xs="5" class="right-side-product">
+            <ion-row class="product-image">
+              <img src="{{imagesUrl}}{{item.imgP}}" alt="Imagen del platillo" (click)="visible=true">
+            </ion-row>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    </ion-card>
+
+  </div>
+
+</div>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-button expand="round" color="secondary" (click)="goToCart()">Cart</ion-button>
+</ion-footer>

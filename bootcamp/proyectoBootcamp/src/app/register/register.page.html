@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <ion-icon name="arrow-back-outline" id="flechita-atras" (click)="goBack()"></ion-icon>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="contenedor">
+    
+    <h1 class="title">Let's get started!</h1>
+
+    <form class="formulario-registro" [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
+      
+      <ion-item lines="none">
+        <ion-label position="floating"> Full name </ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating"> Phone </ion-label>
+        <ion-input formControlName="phone"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating"> Email </ion-label>
+        <ion-input formControlName="email" ng-pattern=" ^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$" ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input required formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">Confirm password</ion-label>
+        <ion-input required formControlName="confirmacionPassword" type="password"></ion-input>
+      </ion-item>
+    </form>
+
+    <ion-item class="errormsg" lines="none">
+      <div class="error" 
+      *ngIf=
+      "formularioRegistro.get('nombre').hasError('required') &&
+      formularioRegistro.get('phone').hasError('required') &&
+      formularioRegistro.get('email').hasError('required') &&
+      formularioRegistro.get('password').hasError('required') &&
+      formularioRegistro.get('confirmacionPassword').hasError('required')">
+      <ion-icon name="warning-outline"></ion-icon>All fields are required
+      </div>
+    </ion-item>
+
+    <ion-button id="buttom" color="secondary" (click)="guardar()" expand="block" shape="round" (click)="logDeviceId()">Sign Up</ion-button>
+
+  </div>
+
+</ion-content>
+

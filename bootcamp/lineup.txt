@@ -1,0 +1,8 @@
+Presentacion inicial - Humberto
+App presentation
+	Login - Authentication/ encryption
+	Home - Restaurant Database
+	Invitations - 
+
+Problemas - charly
+Future plans - Gilberto (Backend) / Melany (FrontEnd)
